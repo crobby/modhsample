@@ -1,5 +1,6 @@
 
-oc delete kfdef opendatahub -n opendatahub --force --grace-period=0
+oc delete kfdef opendatahub -n opendatahub --force --grace-period=0 &
+oc patch -n opendatahub kfdef opendatahub --type=merge -p '{"metadata": {"finalizers":null}}'
 oc delete -f operator.yaml -n optest
 oc delete -f cluster_role_binding.yaml -n optest
 oc delete -f role.yaml -n optest
