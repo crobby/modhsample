@@ -1,6 +1,6 @@
 
+oc delete kfdef opendatahub -n opendatahub --force --grace-period=0
 oc delete -f operator.yaml -n optest
-oc delete kfdef opendatahub -n opendatahub
 oc delete -f cluster_role_binding.yaml -n optest
 oc delete -f role.yaml -n optest
 oc delete -f service_account.yaml -n optest
